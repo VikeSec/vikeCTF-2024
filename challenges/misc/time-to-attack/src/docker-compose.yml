@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  timing:
+    build: .
+    ports:
+      - 3006:8080
+    restart: unless-stopped
