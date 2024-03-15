@@ -1,0 +1,6 @@
+services:
+  cookies:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - 3005:8080
