@@ -1,0 +1,1 @@
+export const flag = "vikeCTF{p33L_1t_L1k3_4N_0n1oN}"
