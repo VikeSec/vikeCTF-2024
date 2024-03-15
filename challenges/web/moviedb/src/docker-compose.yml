@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  moviedb:
+    build: .
+    ports:
+      - 3003:8000
+    restart: unless-stopped

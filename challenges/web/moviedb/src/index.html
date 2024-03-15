@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movie DB</title>
+    <link rel="stylesheet" href="static/pico.min.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Movie DB</h1>
+      <form action="/" method="get">
+        <input
+          type="search"
+          name="search"
+          placeholder="Search"
+          {%
+          if
+          search
+          %}
+          value="{{ search }}"
+          {%
+          endif
+          %}
+          required
+        />
+        <details>
+          <summary>Filters</summary>
+          <div class="grid">
+            <input type="number" name="min-rating" placeholder="Min Rating" />
+            <input type="number" name="max-rating" placeholder="Max Rating" />
+          </div>
+          <div class="grid">
+            <input type="number" name="min-year" placeholder="Min Year" />
+            <input type="number" name="max-year" placeholder="Max Year" />
+          </div>
+          <div class="grid">
+            <input type="number" name="min-mins" placeholder="Min Minutes" />
+            <input type="number" name="max-mins" placeholder="Max Minutes" />
+          </div>
+          <div class="grid">
+            <input type="number" name="min-votes" placeholder="Min Votes" />
+            <input type="number" name="max-votes" placeholder="Max Votes" />
+          </div>
+        </details>
+        <input type="submit" value="Search" />
+      </form>
+      {% if results|length %}
+      <table>
+        <thead>
+          <th>Title</th>
+          <th>Year</th>
+          <th>Runtime (minutes)</th>
+          <th>Rating</th>
+          <th>Votes</th>
+        </thead>
+        <tbody>
+          {% for movie in results %}
+          <tr>
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.year }}</td>
+            <td>{{ movie.runtimeMinutes }}</td>
+            <td>{{ movie.averageRatings }}</td>
+            <td>{{ movie.votes }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
+    </main>
+  </body>
+  <script>
+    const form = document.querySelector("form");
+    form.addEventListener("submit", (e) => {
+      for (const input of form.querySelectorAll("input")) {
+        if (input.name && !input.value) {
+          input.name = "";
+        }
+      }
+    });
+  </script>
+</html>
