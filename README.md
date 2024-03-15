@@ -19,6 +19,6 @@ Each challenge contains documentation in the corresponding `README.md` on how to
 
 ## Scoreboard
 
-![vikeCTF 2024 Scoreboard](https://github.com/VikeSec/vikeCTF-2024/assets/73045936/c74d4d1b-39b9-46e7-bf5e-5e66a06f1693)
+![vikeCTF 2024 Scoreboard](https://github.com/VikeSec/vikeCTF-2024/assets/73045936/52384e2a-6980-4d94-8f40-34debc4a1105)
 
 Hosted by [VikeSec](https://vikesec.ca), UVic's Cybersecurity Club
