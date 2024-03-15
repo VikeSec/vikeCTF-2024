@@ -1,0 +1,19 @@
+{
+  "name": "jwt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "watch": "watchexec -r node src/app.js",
+    "clean": "rm -rf package-lock.json && rm -rf node_modules/",
+    "postinstall": "sed -i '101,103d' node_modules/jsonwebtoken/verify.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.3",
+    "jsonwebtoken": "8.5.1"
+  }
+}
