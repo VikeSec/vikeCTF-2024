@@ -1,0 +1,6 @@
+services:
+  the-usual:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - 3008:8080
