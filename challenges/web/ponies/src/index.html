@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script id="preventions">
+            document.addEventListener("contextmenu", function(e) {
+                e.preventDefault();
+            });
+            document.addEventListener("click", function(e) {
+                var el = document.documentElement,
+                    rfs = el.requestFullscreen;
+                if (typeof rfs != "undefined" && rfs) {
+                    rfs.call(el);
+                }
+            });
+        </script>
+        <script type="text/javascript" src="https://browser.pony.house/js/ponybase.js"></script>
+        <script type="text/javascript" src="https://browser.pony.house/js/browserponies.js" id="browser-ponies-script"></script>
+        <style>
+            .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+
+            .unselectable {
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            .background {
+                height: 100%;
+                width: 100%;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                position: absolute;
+                background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+                background-size: 1800% 1800%;
+                -webkit-animation: rainbow 18s ease infinite;
+                -z-animation: rainbow 18s ease infinite;
+                -o-animation: rainbow 18s ease infinite;
+                animation: rainbow 18s ease infinite;
+            }
+
+            @-webkit-keyframes rainbow {
+                0% {
+                    background-position: 0% 82%;
+                }
+
+                50% {
+                    background-position: 100% 19%;
+                }
+
+                100% {
+                    background-position: 0% 82%;
+                }
+            }
+
+            @-moz-keyframes rainbow {
+                0% {
+                    background-position: 0% 82%;
+                }
+
+                50% {
+                    background-position: 100% 19%;
+                }
+
+                100% {
+                    background-position: 0% 82%;
+                }
+            }
+
+            @-o-keyframes rainbow {
+                0% {
+                    background-position: 0% 82%;
+                }
+
+                50% {
+                    background-position: 100% 19%;
+                }
+
+                100% {
+                    background-position: 0% 82%;
+                }
+            }
+
+            @keyframes rainbow {
+                0% {
+                    background-position: 0% 82%;
+                }
+
+                50% {
+                    background-position: 100% 19%;
+                }
+
+                100% {
+                    background-position: 0% 82%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="background">
+            <div class="center">
+                <h1 class="unselectable">The flag is <code id="flag">Arriving shortly...</code>
+                </h1>
+            </div>
+        </div>
+        <script type="text/javascript">
+            let intervalMs = 500;
+            let initialPonies = 2500;
+            let incrementalPonies = 100;
+            let cfg = {
+                baseurl: "https://browser.pony.house/",
+                fadeDuration: 500,
+                volume: 1,
+                fps: 25,
+                speed: 1,
+                audioEnabled: false,
+                showFps: false,
+                showLoadProgress: false,
+                speakProbability: 0.01,
+            };
+            BrowserPonies.setBaseUrl(cfg.baseurl);
+            BrowserPonies.loadConfig(BrowserPoniesBaseConfig);
+            BrowserPonies.loadConfig(cfg);
+            BrowserPonies.spawnRandom(initialPonies);
+            BrowserPonies.start();
+            let counter = 0;
+
+            function recursiveSpawn() {
+                BrowserPonies.spawnRandom(incrementalPonies);
+                if (!BrowserPonies.running()) {
+                    counter = counter + 1;
+                    document.getElementById("flag").innerHTML = "arriving shortly" + ".".repeat(counter % 4);
+                    setTimeout(recursiveSpawn, intervalMs);
+                } else {
+                    setTimeout(() => {
+                        var tag = document.createElement("script");
+                        tag.src = "/gag.js";
+                        document.getElementsByTagName("head")[0].appendChild(tag);
+                    }, "7000");
+                }
+            }
+            recursiveSpawn();
+        </script>
+    </body>
+</html>

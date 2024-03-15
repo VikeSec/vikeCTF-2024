@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  ponies:
+    build: .
+    ports:
+      - 3009:3000
+    restart: unless-stopped
