@@ -1,0 +1,19 @@
+** Weather Report: Moscow **
+
+Source: REDACTED
+
+------------------------
+
+Sunday: Periods of snow ending before morning then cloudy with 30 percent chance of flurries. Amount 2 to 4 cm. Wind up to 15 km/h. Low minus 9. Wind chill near minus 14.
+
+Monday: Cloudy with 30 percent chance of flurries early in the morning. Clearing in the morning. Wind up to 15 km/h. High minus 5. Wind chill minus 14 in the morning and minus 9 in the afternoon.
+
+Tuesday: Sunny. High plus 2.
+
+Wednesday: Sunny. High plus 4.
+
+Thursday: A few clouds. Wind becoming south 30 km/h after midnight. Low minus 18. Wind chill minus 19 this evening and minus 30 overnight. Risk of frostbite.
+
+Friday: Cloudy. 60 percent chance of light snow in the afternoon. Wind south 40 km/h gusting to 60. High minus 7. Wind chill minus 26 in the morning and minus 18 in the afternoon.
+
+Saturday: Heavy snow beginning in the morning. Amount 40 to 45 cm. Wind northeast 30 km/h vikeCTF{6u5ting_7o_50_KM_p3r_h0ur}. Temperature rising to minus 10 by evening. Wind chill near minus 21.
