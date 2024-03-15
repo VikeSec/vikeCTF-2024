@@ -1,0 +1,2 @@
+py-cord==2.4.1
+pyrate-limiter==2.10.0
