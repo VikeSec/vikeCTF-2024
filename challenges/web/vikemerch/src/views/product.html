@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vikeMERCH - {{.Title}}</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+      .product-container {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        max-width: 1000px;
+        padding: 16px;
+        gap: 16px;
+        &>.productimage {
+          max-width: 500px;
+          aspect-ratio: 1;
+        }
+        &>.productinfo>.price{
+          font-size: 20px;
+        }
+      }
+      {{template "navbar-css"}}
+      {{template "footer-css"}}
+    </style>
+  </head>
+  <body>
+    {{template "navbar"}}
+    <div class="product-container">
+      <img class="productimage" src="/assets?id={{.Image}}" />
+      <div class="productinfo">
+        <h1 class="title">{{.Title}}</h1>
+        <p class="description">{{.Description}}</p>
+        <p class="price">{{.PriceCents}}</p>
+        <p>
+          <a href="/cart"><button>Add to cart</button></a>
+        </p>
+      </div>
+    </div>
+    {{template "footer"}}
+  </body>
+</html>

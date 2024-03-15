@@ -1,0 +1,56 @@
+<style>
+  {{define "navbar-css"}}
+  .nav-bar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: logo search search links;
+    justify-content: stretch;
+    justify-items: center;
+    gap: 16px;
+    & > .logo {
+      padding: 8px 16px;
+      justify-self: start;
+      font-size: 2rem;
+      grid-column: 1;
+      &>a {
+        color: #000;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    & > .search-bar {
+      width: 100%;
+      margin: 8px 16px;
+      justify-self: center;
+      grid-column: 2 / 4;
+    }
+    & > .navlink {
+      padding: 8px 16px;
+      justify-self: end;
+      grid-column: 4;
+      display: block;
+      align-self: center;
+      color: #666;
+    }
+  }
+  .search-bar {
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    padding: 8px;
+    overflow: hidden;
+  }
+  {{end}}
+</style>
+{{define "navbar"}}
+<form action="/search">
+  <header class="nav-bar">
+    <div class="logo">
+      <a href="/">vike<b>MERCH</b></a>
+    </div>
+    <input name="q" class="search-bar" placeholder="Search" />
+    <a class="navlink" href="/cart">My Cart</a>
+  </header>
+</form>
+{{end}}

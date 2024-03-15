@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Login 🤫</title>
+  </head>
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100svh;
+      font-family: sans-serif;
+    }
+    input[type="submit"] {
+      margin-top: 12px;
+    }
+    .error-flash {
+      padding: 8px;
+      color: red;
+    }
+  </style>
+  <body>
+    <form method="post">
+      {{if .}}
+      <div class="error-flash">{{.}}</div>
+      {{end}}
+      <fieldset>
+        <legend><b>Login</b></legend>
+        <div>
+          <label>
+            <small>Username</small>
+            <br />
+            <input type="text" name="username" required />
+          </label>
+        </div>
+        <div>
+          <label>
+            <small>Password</small>
+            <br />
+            <input type="password" name="password" required />
+          </label>
+        </div>
+        <input type="submit" value="Login" />
+      </fieldset>
+    </form>
+  </body>
+</html>

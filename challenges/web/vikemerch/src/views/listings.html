@@ -1,0 +1,51 @@
+<style>
+  {{define "listings-css"}}
+  .listing-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+    padding: 16px;
+    gap: 16px;
+    row-gap: 16px;
+  }
+  .listing-item {
+    background-color: #e5e5e5;
+    width: 256px;
+    overflow: hidden;
+    padding: 16px;
+    color: #000;
+    text-decoration: none;
+    & > .productimage {
+      width: 100%;
+    }
+    & > .info {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: start;
+    }
+
+    & > .info > .title {
+      font-weight: bold;
+    }
+  }
+  {{end}}
+</style>
+{{define "listings"}}
+<div class="listing-grid">
+  {{range .}} {{template "listing-small" .}} {{end}}
+</div>
+{{end}} {{define "listing-small"}}
+<a class="listing-item" href="/product?id={{.ID}}">
+  <img class="productimage" src="/assets?id={{.Image}}" />
+  <div class="info">
+    <div class="title">{{.Title}}</div>
+    <div class="price">{{.PriceCents}}</div>
+  </div>
+</a>
+{{end}}

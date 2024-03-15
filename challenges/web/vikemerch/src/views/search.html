@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vikeMERCH - {{.Query}}</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+      .search-results {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25em;
+        color: #444;
+      }
+      {{template "navbar-css"}}
+      {{template "listings-css"}}
+      {{template "footer-css"}}
+    </style>
+  </head>
+  <body>
+    {{template "navbar"}}
+    <div class="search-results">
+      {{if .Listings}} Search results for: {{.Query}} {{else}} No results found!
+      {{end}}
+    </div>
+    {{template "listings" .Listings}} {{template "footer"}}
+  </body>
+</html>

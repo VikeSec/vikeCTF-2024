@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vikeMERCH</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+      {{template "navbar-css"}}
+      .hero-message{
+        padding: 16px 64px;
+        background-color: #e5e5e5;
+        min-height: 50svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 8px;
+        & > .title {
+          font-size: xx-large;
+          font-weight: bold;
+        }
+        & > .content {
+          display: flex;
+          width: 60%;
+          gap: 16px;
+          &>img{
+            max-width: 50svh;
+            aspect-ratio: 1;
+          }
+        }
+      }
+      {{template "listings-css"}}
+      {{template "footer-css"}}
+    </style>
+  </head>
+  <body>
+    {{template "navbar"}}
+    <main>
+      <div class="hero-message">
+        <span class="title">Unleash Your Inner Viking with vikeMERCH!</span>
+        <div></div>
+        <div class="content">
+          <div>
+            <p>
+              Welcome to vikeMERCH, your ultimate destination for all things
+              Viking! Dive into a world of fierce warriors, epic sagas, and
+              timeless Norse mythology with our premium selection of
+              Viking-inspired merchandise.
+            </p>
+            <p>
+              From intricately crafted jewelry adorned with ancient symbols to
+              rugged apparel that echoes the spirit of exploration and
+              adventure, vikeMERCH offers a diverse range of products that
+              celebrate the legendary Viking heritage.
+            </p>
+            <p>
+              Whether you're a history enthusiast, a fan of Norse mythology, or
+              simply drawn to the rugged allure of Viking culture, vikeMERCH has
+              something for everyone. Explore our collection today and embark on
+              a journey that channels the strength, bravery, and indomitable
+              spirit of the Vikings.
+            </p>
+            <p>
+              Gear up like a true warrior and conquer the day with vikeMERCH –
+              Where Legends Come to Life!"
+            </p>
+          </div>
+          <img src="assets?id=hero.jpg" />
+        </div>
+      </div>
+      {{template "listings" .Listings}}
+    </main>
+    {{template "footer"}}
+  </body>
+</html>
